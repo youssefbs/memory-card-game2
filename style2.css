@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+
+}
+
+#btn{
+    margin:10px;
+    text-align: center;
+}
+
+.cartes{
+    border:1px solid black;
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.carte{
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    background: #060AB2;
+    transform: scale(1);
+    cursor: pointer;
+    
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    
+}
+
+.carte:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.back,.img{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    background: #060AB2;
+    backface-visibility: hidden
+}
+
+.img{
+    transform: rotateY(180deg);
+}
+
+.carte.flip{
+    transform: rotateY(180deg);
+}
+
